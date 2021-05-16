@@ -1,0 +1,20 @@
+<launch>
+  <arg name="scene_name" default="cofusion_car" />
+  <arg name="sensor_name" default="cofusion_car" />
+  <arg name="gt_segmentation" default="false" />
+  <arg name="visualize" default="true" />
+
+  <include file="$(find tsdf_plusplus_ros)/launch/tsdf_plusplus_node.launch" >
+    <arg name="scene_name" value="$(arg scene_name)" />
+    <arg name="sensor_name" value="$(arg sensor_name)" />
+    <arg name="gt_segmentation" value="$(arg gt_segmentation)" />
+    <arg name="visualize" value="$(arg visualize)" />
+  </include>
+
+  <include file="$(find rgbd_segmentation)/launch/rgbd_segmentation.launch" unless="$(arg gt_segmentation)">
+    <arg name="scene_name" value="$(arg scene_name)" />
+    <arg name="sensor_name" value="$(arg sensor_name)" />
+    <arg name="visualize" value="$(arg visualize)" />
+  </include>
+
+</launch>

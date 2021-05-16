@@ -1,0 +1,24 @@
+voxel_size: 0.015
+truncation_distance_factor: 3.0
+max_ray_length_m: 5
+
+object_tracking:
+  enable: true
+  icp_use_reciprocal_correspondences: true
+  icp_max_correspondence_distance: 100
+  icp_use_symmetric_objective: false
+  icp_max_iterations: 100
+  icp_transformation_epsilon: 0.000002
+  icp_absolute_mse: 0.000000000001
+  icp_euclidean_fitness_epsilon: 0.0001
+
+meshing:
+  update_mesh_every_n_sec: 1.0
+  mesh_filename: "tpp_map.ply"
+
+visualizer:
+  enable: true
+  camera_intrinsics: [360, 0, 320, 0, 360, 240, 0, 0, 1]
+
+debug:
+  verbose_log: false

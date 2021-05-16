@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="2">
+  <name>tsdf_plusplus</name>
+  <version>1.0.0</version>
+  <description>TSDF++: Multi-object TSDF fusion for dynamic object tracking and reconstruction</description>
+
+  <author email="margarita.grinvald@mavt.ethz.ch">Margarita Grinvald</author>
+
+  <maintainer email="margarita.grinvald@mavt.ethz.ch">Margarita Grinvald</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <depend>eigen_catkin</depend>
+  <depend>glog_catkin</depend>
+  <depend>pcl_catkin</depend>
+  <depend>voxblox</depend>
+  <depend>voxblox_ros</depend>
+</package>
