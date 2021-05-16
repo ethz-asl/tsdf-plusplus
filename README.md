@@ -1,6 +1,6 @@
 ## TSDF++: A Multi-Object Formulation for Dynamic Object Tracking and Reconstruction
 
-TSDF++ is a novel multi-object TSDF formulation that can encode multiple object surfaces at any given location in the map. In a multiple dynamic object tracking and reconstruction scenario, such representation allows maintaining accurate reconstruction of surfaces even while they become temporarily occluded by other objects moving in their proximity. At the same time, the representation allows maintaining a single volume for the entire scene and all the objects therein, thus solving the fundamental challenge of scalability with respect to the number of objects in the scene and removing the need for an explicit occlusion handling strategy.
+TSDF++ is a novel multi-object TSDF formulation that can encode multiple object surfaces at each voxel. In a multiple dynamic object tracking and reconstruction scenario, a TSDF++ map representation allows maintaining accurate reconstruction of surfaces even while they become temporarily occluded by other objects moving in their proximity. At the same time, the representation allows maintaining a single volume for the entire scene and all the objects therein, thus solving the fundamental challenge of scalability with respect to the number of objects in the scene and removing the need for an explicit occlusion handling strategy.
 
 ## Citing 
 
@@ -18,4 +18,4 @@ Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++:
 ```
 
 ## License
-The code is available under the [BSD-3-Clause license](https://github.com/ethz-asl/tsdf-plusplus/blob/master/LICENSE).
+The code is available under the [MIT license](https://github.com/ethz-asl/tsdf-plusplus/blob/master/LICENSE).
