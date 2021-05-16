@@ -33,8 +33,7 @@ Block<TsdfVoxel>::Ptr ObjectVolume::allocateStorageAndGetBlockPtr(
         block_idx,
         std::make_shared<Block<TsdfVoxel>>(
             tsdf_layer_->voxels_per_side(), tsdf_layer_->voxel_size(),
-            getOriginPointFromGridIndexD(block_idx,
-                                         tsdf_layer_->block_size())));
+            getOriginPointFromGridIndex(block_idx, tsdf_layer_->block_size())));
 
     CHECK(insert_status.second)
         << "Block already exists when allocating at " << block_idx.transpose();
