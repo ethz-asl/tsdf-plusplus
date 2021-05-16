@@ -301,9 +301,8 @@ void Map::transformLayer(const ObjectID& object_id,
       MOVoxel& mo_voxel = mo_block->getVoxelByLinearIndex(voxel_idx);
 
       // Find voxel centers location in the input.
-      const PointD voxel_center =
-          T_in_out.cast<Double>() *
-          block->computeCoordinatesFromLinearIndexD(voxel_idx);
+      const Point voxel_center =
+          T_in_out * block->computeCoordinatesFromLinearIndex(voxel_idx);
 
       // Interpolate voxel.
       if (interpolator.getVoxel(voxel_center, &voxel, true)) {

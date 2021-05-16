@@ -423,7 +423,7 @@ MOVoxel* Integrator::allocateStorageAndGetVoxelPtr(
       auto insert_status = temp_block_map_.emplace(
           block_idx, std::make_shared<Block<MOVoxel>>(
                          voxels_per_side_, voxel_size_,
-                         getOriginPointFromGridIndexD(block_idx, block_size_)));
+                         getOriginPointFromGridIndex(block_idx, block_size_)));
 
       CHECK(insert_status.second) << "Block already exists when allocating at "
                                   << block_idx.transpose();
