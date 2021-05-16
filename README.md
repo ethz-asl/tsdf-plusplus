@@ -17,5 +17,51 @@ Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++:
 }
 ```
 
+## Installation
+
+
+### Prerequisites
+Install ROS following the instructions at the [ROS installation page](http://wiki.ros.org/ROS/Installation). The full install (`ros-kinetic-desktop-full`, `ros-melodic-desktop-full`) are recommended. 
+
+Make sure to source your ROS _setup.bash_ script by following the instructions on the ROS installation page.
+
+### Installation on Ubuntu
+In your terminal, define the installed ROS version and name of the catkin workspace to use:
+```bash
+export ROS_VERSION = kinetic # (Ubuntu 16.04: kinetic, Ubuntu 18.04: melodic)
+export CATKIN_WS = ~/catkin_ws
+```
+
+If you don't have a [catkin](http://wiki.ros.org/catkin) workspace yet, create a new one:
+```bash
+mkdir -p $CATKIN_WS/src && cd $CATKIN_WS
+catkin init
+catkin config --extend /opt/ros/$ROS_VERSION --merge-devel 
+catkin config --cmake-args -DCMAKE_CXX_STANDARD=14 -DCMAKE_BUILD_TYPE=Release
+wstool init src
+```
+
+Clone the `tsdf-plusplus` repository over HTTPS (no Github account required) and automatically fetch dependencies:
+```bash
+cd $CATKIN_WS/src
+git clone https://github.com/ethz-asl/tsdf-plusplus.git
+wstool merge -t . tsdf-plusplus/tsdf_plusplus_https.rosinstall
+wstool update
+```
+
+Alternatively, clone over SSH (Github account required):
+```bash
+cd $CATKIN_WS/src
+git clone git@github.com:ethz-asl/tsdf-plusplus.git
+wstool merge -t . tsdf-plusplus/tsdf_plusplus_ssh.rosinstall
+wstool update
+```
+
+Build and source the voxblox++ packages:
+```bash
+catkin build 
+source ../devel/setup.bash # (bash shell: ../devel/setup.bash,  zsh shell: ../devel/setup.zsh)
+```
+
 ## License
 The code is available under the [MIT license](https://github.com/ethz-asl/tsdf-plusplus/blob/master/LICENSE).
