@@ -1,24 +1,33 @@
 - git:
     local-name: catkin_simple
-    uri: git@github.com:catkin/catkin_simple.git
+    uri: https://github.com/catkin/catkin_simple.git
+- git:
+    local-name: cloud_segmentation
+    uri: https://github.com/ethz-asl/cloud_segmentation.git
 - git:
     local-name: eigen_catkin
-    uri: git@github.com:ethz-asl/eigen_catkin.git
+    uri: https://github.com/ethz-asl/eigen_catkin.git
 - git:
     local-name: eigen_checks
-    uri: git@github.com:ethz-asl/eigen_checks.git
+    uri: https://github.com/ethz-asl/eigen_checks.git
 - git:
     local-name: gflags_catkin
-    uri: git@github.com:ethz-asl/gflags_catkin.git
+    uri: https://github.com/ethz-asl/gflags_catkin.git
 - git:
     local-name: glog_catkin
-    uri: git@github.com:ethz-asl/glog_catkin.git
+    uri: https://github.com/ethz-asl/glog_catkin.git
+- git:
+    local-name: mask_rcnn_ros
+    uri: https://github.com/ethz-asl/mask_rcnn_ros.git
 - git:
     local-name: minkindr
-    uri: git@github.com:ethz-asl/minkindr.git
+    uri: https://github.com/ethz-asl/minkindr.git
 - git:
     local-name: protobuf_catkin
-    uri: git@github.com:ethz-asl/protobuf_catkin.git
+    uri: https://github.com/ethz-asl/protobuf_catkin.git
+- git:
+    local-name: rgbd_segmentation
+    uri: https://github.com/ethz-asl/rgbd_segmentation.git
 - git:
     local-name: voxblox
-    uri: git@github.com:ethz-asl/voxblox.git
+    uri: https://github.com/ethz-asl/voxblox.git
