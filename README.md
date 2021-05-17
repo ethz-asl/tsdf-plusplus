@@ -19,17 +19,21 @@ Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++:
 
 ## Installation
 
+The installation has been tested on Ubuntu 16.04 and Ubutnu 20.04.
 
 ### Prerequisites
 Install ROS following the instructions at the [ROS installation page](http://wiki.ros.org/ROS/Installation). The full install (`ros-kinetic-desktop-full`, `ros-melodic-desktop-full`) are recommended. 
 
 Make sure to source your ROS _setup.bash_ script by following the instructions on the ROS installation page.
 
+### Requirements
+- C++14 for [PCL 1.10](https://github.com/PointCloudLibrary/pcl)
+
 ### Installation on Ubuntu
 In your terminal, define the installed ROS version and name of the catkin workspace to use:
 ```bash
-export ROS_VERSION = kinetic # (Ubuntu 16.04: kinetic, Ubuntu 18.04: melodic)
-export CATKIN_WS = ~/catkin_ws
+export ROS_VERSION=kinetic # (Ubuntu 16.04: kinetic, Ubuntu 18.04: melodic)
+export CATKIN_WS=~/catkin_ws
 ```
 
 If you don't have a [catkin](http://wiki.ros.org/catkin) workspace yet, create a new one:
@@ -57,10 +61,22 @@ wstool merge -t . tsdf-plusplus/tsdf_plusplus_ssh.rosinstall
 wstool update
 ```
 
-Build and source the voxblox++ packages:
+Build and source the TSDF++ packages:
 ```bash
-catkin build 
+catkin build tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentation
 source ../devel/setup.bash # (bash shell: ../devel/setup.bash,  zsh shell: ../devel/setup.zsh)
+```
+
+
+## Troubleshooting
+### Compilation freeze
+By default `catkin build` on a computer with `N` CPU cores will run `N` `make` jobs simultaneously. If compilation seems to hang forever, it might be running low on RAM. Try limiting the number of maximum parallel build jobs through the `-jN` flag to a value way lower than your CPU count, i.e.
+```bash
+catkin build tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentation -j4
+```
+If it still freezes at compilation time, you can go as far as limiting the maximum number of parallel build jobs and max load to `1` through the `-lN` flag:
+```bash
+catkin build tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentation -j1 -l1
 ```
 
 ## License
