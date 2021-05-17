@@ -21,13 +21,15 @@ Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++:
 
 The installation has been tested on Ubuntu 16.04 and Ubutnu 20.04.
 
-### Prerequisites
+### Requirements
+- ROS 
+- C++14 for [PCL 1.10](https://github.com/PointCloudLibrary/pcl)
+
+### Install dependencies
 Install ROS following the instructions at the [ROS installation page](http://wiki.ros.org/ROS/Installation). The full install (`ros-kinetic-desktop-full`, `ros-melodic-desktop-full`) are recommended. 
 
 Make sure to source your ROS _setup.bash_ script by following the instructions on the ROS installation page.
 
-### Requirements
-- C++14 for [PCL 1.10](https://github.com/PointCloudLibrary/pcl)
 
 ### Installation on Ubuntu
 In your terminal, define the installed ROS version and name of the catkin workspace to use:
