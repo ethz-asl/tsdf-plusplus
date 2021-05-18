@@ -6,7 +6,7 @@ TSDF++ is a novel multi-object TSDF formulation that can encode multiple object 
 
 When using **TSDF++** in your research, please cite the following publication:
 
-Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++: A Multi-Object Formulation for Dynamic Object Tracking and Reconstruction**, in _2021 IEEE International Conference on Robotics and Automation (ICRA)_, 2021. [[Video](https://youtu.be/dSJmoeVasI0)]
+Margarita Grinvald, Federico Tombari, Roland Siegwart, and Juan Nieto, **TSDF++: A Multi-Object Formulation for Dynamic Object Tracking and Reconstruction**, in _2021 IEEE International Conference on Robotics and Automation (ICRA)_, 2021. [[Paper](https://arxiv.org/abs/2105.07468)] [[Video](https://youtu.be/dSJmoeVasI0)]
 
 ```bibtex
 @article{grinvald2021tsdf,
