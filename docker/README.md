@@ -48,18 +48,18 @@ on the docker machine.
 
 For example, you can use the following command:
 ```bash
-docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws
+./docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws
 ```
 
 If you want to run it as a daemon you can use:
 ```bash
-docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws dt
+./docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws dt
 ```
 
 Once you are in the docker machine you can, for instance, build
 from sources doing
 ```bash
- catkin build -j$(($(nproc) / 2)) -l1 tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentation
+catkin build -j$(($(nproc) / 2)) -l1 tsdf_plusplus_ros rgbd_segmentation mask_rcnn_ros cloud_segmentation
 ```
 
 By doing so, the docker machine will build the sources on your computer and

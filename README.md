@@ -47,11 +47,19 @@ catkin config --cmake-args -DCMAKE_CXX_STANDARD=14 -DCMAKE_BUILD_TYPE=Release
 wstool init src
 ```
 
-Clone the `tsdf-plusplus` repository (first tries over SSH and falls back to HTTPS):
+Clone the `tsdf-plusplus` repository over HTTPS (no Github account required) and automatically fetch dependencies:
 ```bash
 cd $CATKIN_WS/src
-git clone git@github.com:ethz-asl/tsdf-plusplus.git | git clone https://github.com/ethz-asl/tsdf-plusplus.git
-wstool merge -t . tsdf-plusplus/tsdf_plusplus_ssh.rosinstall | wstool merge -t . tsdf-plusplus/tsdf_plusplus_https.rosinstall
+git clone https://github.com/ethz-asl/tsdf-plusplus.git
+wstool merge -t . tsdf-plusplus/tsdf_plusplus_https.rosinstall
+wstool update
+```
+
+Alternatively, clone over SSH (Github account required):
+```bash
+cd $CATKIN_WS/src
+git clone git@github.com:ethz-asl/tsdf-plusplus.git
+wstool merge -t . tsdf-plusplus/tsdf_plusplus_ssh.rosinstall
 wstool update
 ```
 
