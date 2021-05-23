@@ -1,11 +1,11 @@
 # Building image and running container
 
-To build the docker image ( `tsdf-plusplus-ros-catkin-build` ) run:
+To build the docker image run:
 ```bash
 ./build-ros-image.sh
 ```
 
-To run the docker image use:
+To run the docker image run:
 ```bash
 ./run-ros-image.sh
 ```
@@ -14,8 +14,7 @@ To run the docker image use:
 
 ## Copy workspace from docker machine
 
-If you want to get quicky up and runing, keeping sources on your computer
-and using docker as a as a perdictable build system you can run:
+To the local development environment up and running quickly using docker run:
 ```bash
 ./build-ros-image.sh
 ./set-me-up.sh
@@ -28,7 +27,7 @@ This `set-me-up.sh` script will do the following:
 - Copy the built workspace to the destination folder of choice
 - Stop the container
 
-Note that if you want to change the remote to SSH or your fork you'll need to edit the origin in the cloned repos.
+Note that if you want to change the remote to SSH or your fork you'll need to edit the `origin` in the cloned repos.
 For instance, in the `tsdf-plusplus` project use something like:
 ```bash
 git remote set-url origin git@github.com:ethz-asl/tsdf-plusplus.git
@@ -42,9 +41,9 @@ git remote show origin
 ## Use computer workspace on docker
 
 If you have your workspace locally and want to use the docker machine to build
-and/or run nodes, you can use the scrip `docker-develop.sh`.
+and/or run nodes, you can use the script `docker-develop.sh`.
 This script will discard the sources from the remote repository and instead
-use the sources you have locally on your computer that will be mounted
+use the sources you have locally on your computer, which will be mounted
 on the docker machine.
 
 For example, you can use the following command:
