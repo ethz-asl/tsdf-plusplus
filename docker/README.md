@@ -2,12 +2,12 @@
 
 To build the docker image run:
 ```bash
-./build-ros-image.sh
+./bin/build-ros-image.sh
 ```
 
 To run the docker image run:
 ```bash
-./run-ros-image.sh
+./bin/run-ros-image.sh
 ```
 
 # Getting environment up and running
@@ -16,8 +16,8 @@ To run the docker image run:
 
 To the local development environment up and running quickly using docker run:
 ```bash
-./build-ros-image.sh
-./set-me-up.sh
+./bin/build-ros-image.sh
+./bin/set-me-up.sh
 ```
 
 You can skip running `build-ros-image.sh` if the image is already built.
@@ -48,12 +48,12 @@ on the docker machine.
 
 For example, you can use the following command:
 ```bash
-./docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws
+./bin/docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws
 ```
 
 If you want to run it as a daemon you can use:
 ```bash
-./docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws dt
+./bin/docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws dt
 ```
 
 Once you are in the docker machine you can, for instance, build
