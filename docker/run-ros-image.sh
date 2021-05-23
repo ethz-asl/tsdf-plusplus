@@ -5,7 +5,7 @@ if [ -z "$1" ]
     mode="it"
 fi
 docker container run --rm -$mode \
-  --user 1001 \
+  --user $(id -u) \
   --name tsdf-plusplus \
   --workdir /home/ros/catkin_ws \
   tsdf-plusplus-ros-catkin-build:v0.1 \
