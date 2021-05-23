@@ -1,5 +1,5 @@
 #!/bin/bash
-./run-ros-image.sh dt
+./bin/run-ros-image.sh dt
 sleep 5
 container_id=$(docker ps -aqf "name=tsdf-plusplus" | tr -d '\n')
 echo "Docker container $container_id"

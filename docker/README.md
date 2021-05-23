@@ -5,29 +5,30 @@ To build the docker image run:
 ./bin/build-ros-image.sh
 ```
 
-To run the docker image run:
+To run the docker image use:
 ```bash
 ./bin/run-ros-image.sh
 ```
 
 # Getting environment up and running
 
-## Copy workspace from docker machine
+## Set up local development environment
 
-To the local development environment up and running quickly using docker run:
+To get the a local development environment up and running quickly using docker run:
 ```bash
 ./bin/build-ros-image.sh
 ./bin/set-me-up.sh
 ```
 
-You can skip running `build-ros-image.sh` if the image is already built.
+You can skip running `./bin/build-ros-image.sh` if the image is already built.
 
-This `set-me-up.sh` script will do the following:
+The `./bin/set-me-up.sh` script will do the following:
 - Run a docker container
 - Copy the built workspace to the destination folder of choice
 - Stop the container
 
-Note that if you want to change the remote to SSH or your fork you'll need to edit the `origin` in the cloned repos.
+Note that if you want to change the remote to SSH (or your fork) you'll need to edit the `origin` in the cloned repos.
+
 For instance, in the `tsdf-plusplus` project use something like:
 ```bash
 git remote set-url origin git@github.com:ethz-asl/tsdf-plusplus.git
@@ -41,19 +42,20 @@ git remote show origin
 ## Use computer workspace on docker
 
 If you have your workspace locally and want to use the docker machine to build
-and/or run nodes, you can use the script `docker-develop.sh`.
-This script will discard the sources from the remote repository and instead
-use the sources you have locally on your computer, which will be mounted
-on the docker machine.
+and/or run nodes, you can use the script `./bin/docker-develop.sh`.
+You can get such workspace locally following the previous section.
+
+This script will discard the workspace from the remote repository and instead
+use the worksapce you have locally on your computer, which will be mounted
+onto the docker machine.
+
+This means that the docker will use the sources on your machine as well
+as build binaries onto your machine. This way you can use docker as a
+build tool and code locally on your computer while keeping the binaries.
 
 For example, you can use the following command:
 ```bash
 ./bin/docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws
-```
-
-If you want to run it as a daemon you can use:
-```bash
-./bin/docker-develop.sh /home/<YOUR_USERNAME>/catkin_ws dt
 ```
 
 Once you are in the docker machine you can, for instance, build
@@ -64,8 +66,3 @@ catkin build -j$(($(nproc) / 2)) -l1 tsdf_plusplus_ros rgbd_segmentation mask_rc
 
 By doing so, the docker machine will build the sources on your computer and
 keep the binaries on your computer as well.
-
-
-TODO:
- - Automatically build the current (remote) branch
- - Entrypoint with all nodes running
